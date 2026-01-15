@@ -1,0 +1,147 @@
+import axios from 'axios'
+
+// Mock API base URL - In production, this would be your actual API endpoint
+const API_BASE_URL = 'https://jsonplaceholder.typicode.com' // Using JSONPlaceholder as a mock API
+
+// Create axios instance
+const api = axios.create({
+  baseURL: API_BASE_URL,
+  timeout: 10000,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+})
+
+// Mock course data - In a real app, this would come from the backend
+const mockCourses = [
+  {
+    id: 1,
+    title: 'Foundation Course Batch (25-26)',
+    description: 'Comprehensive foundation course for SSLC preparation',
+    subject: 'All Subjects',
+   
+    videoUrl:'https://www.youtube.com/embed/HxKMK6P9aIA'
+  },
+  {
+    id: 2,
+    title: 'Career Guidance Batch (25-26)',
+    description: 'Expert guidance for career planning and exam preparation',
+    subject: 'Career Counseling',
+  
+    videoUrl: 'https://www.youtube.com/embed/ADUzlPbQY60',
+  },
+  {
+    id: 3,
+    title: 'Headstart Batch (25-26)',
+    description: 'Get ahead with early preparation and advanced concepts',
+    subject: 'All Subjects',
+   
+    videoUrl: 'https://www.youtube.com/embed/dKgwFx05Cwc',
+  },
+  {
+    id: 4,
+    title: 'Social Science Foundation Course',
+    description: 'Master Social Science with topper tricks and strategies',
+    subject: 'Social Science',
+   
+    videoUrl: 'https://www.youtube.com/embed/WgruaZhQ63Q',
+  },
+  {
+    id: 5,
+    title: 'Kannada Grammar Masterclass',
+    description: 'Unlock Kannada Grammar: ವ್ಯಾಕರಣ – ಪದ ರಚನೆ',
+    subject: 'Kannada',
+  
+    videoUrl: 'https://www.youtube.com/embed/8Yiey1FvdX4',
+  },
+  {
+    id: 6,
+    title: 'English Grammar Foundation',
+    description: 'Master Articles, Prepositions & Tags',
+    subject: 'English',
+   
+    videoUrl: 'https://www.youtube.com/embed/wsQFX5KyUbM',
+  },
+  {
+    id: 7,
+    title: 'Mathematics Foundation',
+    description: 'Class 10 Math Foundation with expert guidance',
+    subject: 'Mathematics',
+    
+    videoUrl: 'https://www.youtube.com/embed/uWy665MxeOI',
+  },
+  {
+    id: 8,
+    title: 'Science Chemistry Essentials',
+    description: 'Class 10 Science: Chemistry Essentials',
+    subject: 'Chemistry',
+   
+    videoUrl: 'https://www.youtube.com/embed/2vGD5QU72tU',
+  },
+]
+
+// Simulate API delay
+const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms))
+
+// Course API functions
+export const courseAPI = {
+  // Get all courses
+  getAllCourses: async () => {
+    try {
+      await delay(800) // Simulate network delay
+      // In a real app, this would be: return await api.get('/courses')
+      return {
+        data: mockCourses,
+        status: 200,
+      }
+    } catch (error) {
+      throw {
+        message: error.response?.data?.message || 'Failed to fetch courses',
+        status: error.response?.status || 500,
+      }
+    }
+  },
+
+  // Get course by ID
+  getCourseById: async (id) => {
+    try {
+      await delay(600)
+      const course = mockCourses.find(c => c.id === parseInt(id))
+      if (!course) {
+        throw { message: 'Course not found', status: 404 }
+      }
+      // In a real app, this would be: return await api.get(`/courses/${id}`)
+      return {
+        data: course,
+        status: 200,
+      }
+    } catch (error) {
+      throw {
+        message: error.message || 'Failed to fetch course',
+        status: error.status || 500,
+      }
+    }
+  },
+}
+
+// Contact form API
+export const contactAPI = {
+  submitContact: async (formData) => {
+    try {
+      await delay(1000)
+      // In a real app, this would be: return await api.post('/contact', formData)
+      console.log('Contact form submitted:', formData)
+      return {
+        data: { message: 'Thank you for contacting us! We will get back to you soon.' },
+        status: 200,
+      }
+    } catch (error) {
+      throw {
+        message: error.response?.data?.message || 'Failed to submit contact form',
+        status: error.response?.status || 500,
+      }
+    }
+  },
+}
+
+export default api

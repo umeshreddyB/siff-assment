@@ -1,0 +1,59 @@
+.about {
+  width: 100%;
+}
+
+.about-teacher {
+  background: linear-gradient(135deg, #000000 0%, #111827 50%, #fbbf24 100%);
+  color: #f9fafb;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.about-teacher h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.about-content {
+  padding: 60px 20px;
+  background: white;
+}
+
+.about-section {
+  margin-bottom: 50px;
+}
+
+.about-section h2 {
+  color: #1f2937;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  color: #6b7280;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  margin-bottom: 15px;
+}
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .about-teacher h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.5rem;
+  }
+
+ 
+}
