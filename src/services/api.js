@@ -101,27 +101,6 @@ export const courseAPI = {
       }
     }
   },
-
-  
-  getCourseById: async (id) => {
-    try {
-      await delay(600)
-      const course = mockCourses.find(c => c.id === parseInt(id))
-      if (!course) {
-        throw { message: 'Course not found', status: 404 }
-      }
-      
-      return {
-        data: course,
-        status: 200,
-      }
-    } catch (error) {
-      throw {
-        message: error.message || 'Failed to fetch course',
-        status: error.status || 500,
-      }
-    }
-  },
 }
 
 
