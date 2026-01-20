@@ -75,7 +75,7 @@ export const courseAPI = {
   
   getAllCourses: async () => {
     try {
-      await delay(800) 
+      await delay(500) 
       
       return {
         data: mockCourses,
@@ -94,7 +94,7 @@ export const courseAPI = {
 export const contactAPI = {
   submitContact: async (formData) => {
     try {
-      await delay(1000)
+      await delay(500)
       
       console.log('Contact form submitted:', formData)
       return {
