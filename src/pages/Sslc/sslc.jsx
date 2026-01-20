@@ -33,22 +33,8 @@ const SSLC = () => {
     }
   }
 
-  const fetchCourseById = async (courseId) => {
-    setLoading(true)
-    setError('')
-    try {
-      const response = await courseAPI.getCourseById(courseId)
-      setCourse(response.data)
-    } catch (err) {
-      setError(err.message || 'Course not found.')
-    } finally {
-      setLoading(false)
-    }
-  }
 
-  const handleCourseClick = (courseId) => {
-    navigate(`/sslc/${courseId}`)
-  }
+
 
   if (loading) {
     return (
