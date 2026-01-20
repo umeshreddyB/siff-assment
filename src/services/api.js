@@ -1,4 +1,5 @@
 
+
 const mockCourses = [
   {
     id: 1,
@@ -109,4 +110,4 @@ export const contactAPI = {
   },
 }
 
-export default api
+
