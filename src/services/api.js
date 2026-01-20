@@ -1,9 +1,9 @@
 import axios from 'axios'
 
-// Mock API base URL - In production, this would be your actual API endpoint
-const API_BASE_URL = 'https://jsonplaceholder.typicode.com' // Using JSONPlaceholder as a mock API
 
-// Create axios instance
+const API_BASE_URL = 'https://jsonplaceholder.typicode.com' 
+
+
 const api = axios.create({
   baseURL: API_BASE_URL,
   timeout: 10000,
@@ -12,7 +12,7 @@ const api = axios.create({
   },
 })
 
-// Mock course data - In a real app, this would come from the backend
+
 const mockCourses = [
   {
     id: 1,
@@ -80,16 +80,16 @@ const mockCourses = [
   },
 ]
 
-// Simulate API delay
+
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms))
 
-// Course API functions
+
 export const courseAPI = {
-  // Get all courses
+  
   getAllCourses: async () => {
     try {
-      await delay(800) // Simulate network delay
-      // In a real app, this would be: return await api.get('/courses')
+      await delay(800) 
+      
       return {
         data: mockCourses,
         status: 200,
@@ -102,7 +102,7 @@ export const courseAPI = {
     }
   },
 
-  // Get course by ID
+  
   getCourseById: async (id) => {
     try {
       await delay(600)
@@ -110,7 +110,7 @@ export const courseAPI = {
       if (!course) {
         throw { message: 'Course not found', status: 404 }
       }
-      // In a real app, this would be: return await api.get(`/courses/${id}`)
+      
       return {
         data: course,
         status: 200,
@@ -124,12 +124,12 @@ export const courseAPI = {
   },
 }
 
-// Contact form API
+
 export const contactAPI = {
   submitContact: async (formData) => {
     try {
       await delay(1000)
-      // In a real app, this would be: return await api.post('/contact', formData)
+      
       console.log('Contact form submitted:', formData)
       return {
         data: { message: 'Thank you for contacting us! We will get back to you soon.' },

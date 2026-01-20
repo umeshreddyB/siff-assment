@@ -19,7 +19,6 @@ function App() {
             <Route path="/careers" element={<Careers />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/sslc" element={<SSLC />} />
-            <Route path="/sslc/:id" element={<SSLC />} />
           </Routes>
         </main>
         <Footer />
