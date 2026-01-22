@@ -49,33 +49,27 @@
   color: #fbbf24;
 }
 
-.dropdown {
+/* .dropdown {
   position: relative;
-}
+} */
 
 .dropdown > span {
   color: #f9fafb;
   font-weight: 500;
   cursor: pointer;
-  transition: color 0.3s;
 }
 
-.dropdown:hover > span {
-  color: #fbbf24;
-}
+
 
 .dropdown-menu {
   position: absolute;
   top: 100%;
   left: 0;
   background: #111827;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
   border-radius: 8px;
-  list-style: none;
   padding: 10px 0;
   margin: 10px 0 0 0;
   min-width: 180px;
-  opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
   transition: all 0.3s;
