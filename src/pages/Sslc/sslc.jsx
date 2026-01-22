@@ -29,9 +29,7 @@ const SSLC = () => {
     }
   }
 
-  const handleCourseClick = (courseId) => {
-    navigate(`/sslc/${courseId}`)
-  }
+ 
 
   if (loading) {
     return (
