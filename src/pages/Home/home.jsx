@@ -37,7 +37,7 @@ const Home = () => {
 
   return (
     <div className="home">
-      {/* Hero Section */}
+  
       <section className="hero">
         <div className="container">
           <div className="hero-content">
@@ -72,7 +72,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Trust Section */}
+      
       <section className="trust-section">
         <div className="container">
           <p className="trust-text">
@@ -81,7 +81,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Why Parikshe Section */}
+      
       <section className="why-parikshe">
         <div className="container">
           <h2 className="section-title">Why PARIKSHE?</h2>
@@ -121,7 +121,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* App Section */}
+      
       <section className="app-section">
         <div className="container">
           <h2 className="section-title">Parikshe App</h2>
@@ -129,7 +129,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      
       <section className="testimonials">
         <div className="container">
           <h2 className="section-title">Testimonials</h2>
@@ -157,7 +157,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
+      
       <section className="faq-section">
         <div className="container">
           <h2 className="section-title">FAQ</h2>

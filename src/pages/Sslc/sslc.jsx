@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { courseAPI } from '../../services/api'
 import CourseCard from '../../components/CourseCard/courseCard'
 import Loader from '../../components/Loader/loader'
 import './sslc.css'
 
 const SSLC = () => {
-  const navigate = useNavigate()
+  
 
   const [courses, setCourses] = useState([])
   const [loading, setLoading] = useState(true)

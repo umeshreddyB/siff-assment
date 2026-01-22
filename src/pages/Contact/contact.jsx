@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { contactAPI } from '../../services/api'
-import Loader from '../../components/Loader/loader'
+
 import "./contact.css"
 
 const Contact = () => {
