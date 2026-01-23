@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { courseAPI } from '../../services/api'
 import CourseCard from '../../components/CourseCard/courseCard'
+import ClipLoader from "react-spinners/ClipLoader";
 
 import './sslc.css'
 
@@ -8,7 +9,7 @@ const SSLC = () => {
   
 
   const [courses, setCourses] = useState([])
-  
+  const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
 
   useEffect(() => {
@@ -17,13 +18,17 @@ const SSLC = () => {
 
   const fetchAllCourses = async () => {
     
+    setLoading(true)
+
     setError('')
     try {
       const response = await courseAPI.getAllCourses()
       setCourses(response.data)
     } catch (err) {
       setError(err.message || 'Failed to load courses.')
-    } 
+    }  finally{
+      setLoading(false)
+    }
   }
 
  
@@ -40,6 +45,14 @@ const SSLC = () => {
             Retry
           </button>
         </div>
+      </div>
+    )
+  }
+
+  if(loading){
+    return(
+       <div className='loader'>
+        <ClipLoader color="#36d7b7" size={200} />
       </div>
     )
   }
