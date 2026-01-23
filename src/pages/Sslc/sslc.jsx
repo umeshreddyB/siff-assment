@@ -8,7 +8,7 @@ const SSLC = () => {
   
 
   const [courses, setCourses] = useState([])
-  const [loading, setLoading] = useState(true)
+  
   const [error, setError] = useState('')
 
   useEffect(() => {
@@ -16,27 +16,19 @@ const SSLC = () => {
   }, [])
 
   const fetchAllCourses = async () => {
-    setLoading(true)
+    
     setError('')
     try {
       const response = await courseAPI.getAllCourses()
       setCourses(response.data)
     } catch (err) {
       setError(err.message || 'Failed to load courses.')
-    } finally {
-      setLoading(false)
-    }
+    } 
   }
 
  
 
-  if (loading) {
-    return (
-      <div className="sslc">
-        <Loader />
-      </div>
-    )
-  }
+ 
 
   if (error) {
     return (
