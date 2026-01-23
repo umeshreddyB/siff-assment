@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { courseAPI } from '../../services/api'
 import CourseCard from '../../components/CourseCard/courseCard'
-import Loader from '../../components/Loader/loader'
+
 import './sslc.css'
 
 const SSLC = () => {
